@@ -40,4 +40,4 @@ Platforma este bazată pe o aplicație web cu arhitectură de tip Single Page Ap
 
 ## Schema bazei de date
 
-![Schema bazei de date](./media/BD_GraddingApp.png)
+![Schema bazei de date](./server/media/BD_GraddingApp.png)
