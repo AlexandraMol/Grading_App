@@ -28,7 +28,13 @@ const StudentPage = () => {
       >
         Adauga proiect
       </button>
-      <button>Vizualizeaza proiecte</button>
+      <button
+        onClick={() => {
+          navigate(`/studentPage/${id}/otherprojects`);
+        }}
+      >
+        Vizualizeaza proiecte
+      </button>
     </>
   );
 };

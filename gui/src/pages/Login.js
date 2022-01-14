@@ -18,8 +18,14 @@ function Login() {
     for (var i = 0; i < data.length; i++) {
       if (data[i].email === emailLogin && data[i].password === passwordLogin) {
         userId = await data[i].id;
-        console.log("merge");
-        navigate(`/studentPage/:${userId}`);
+        console.log(data[i].userType);
+        if (data[i].userType === 1) {
+          console.log("merge");
+          navigate(`/studentPage/:${userId}`);
+        } else if (data[i].userType === 0) {
+          console.log("merge2");
+          navigate(`/proffesorPage/:${userId}`);
+        }
       }
     }
   };

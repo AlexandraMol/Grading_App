@@ -33,7 +33,7 @@ projectRouter
           status: "test",
           createdAt: newProject.createdAt,
           updatedAt: newProject.updatedAt,
-          ProjectId: req.body.id,
+          ProjectId: newProject.id,
           UserId: req.params.idStudent,
         });
         return res.status(200).json(newUserProject);
@@ -43,7 +43,7 @@ projectRouter
           status: "test",
           createdAt: newCreatedProject.createdAt,
           updatedAt: newCreatedProject.updatedAt,
-          ProjectId: req.body.id,
+          ProjectId: newCreatedProject.id,
           UserId: req.params.idStudent,
         });
         return res.status(200).json(newUserProject);
