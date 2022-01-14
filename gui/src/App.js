@@ -17,7 +17,7 @@ import ProjectsSelectedStudent from "./pages/ProffesorPages/ProjectsSelectedStud
 import ClickedProject from "./pages/ProffesorPages/ClickedProject";
 import ClickedFile from "./pages/ProffesorPages/ClickedFile";
 import AddProject from "./pages/AddProjectFolder/AddProject";
-
+import AddFile from "./pages/MyProjectsFolder/AddFile";
 function App() {
   return (
     <BrowserRouter>
@@ -37,6 +37,11 @@ function App() {
         <Route
           path="/studentPage/:id/myprojects/:idProject/files/:idFile"
           element={<SelectedFile />}
+        />
+
+        <Route
+          path="/studentPage/:id/myprojects/:idProject/files/addFile"
+          element={<AddFile />}
         />
         {/* MyProjects Routes Ending */}
 
