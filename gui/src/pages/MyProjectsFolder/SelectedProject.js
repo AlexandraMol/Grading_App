@@ -44,6 +44,8 @@ const SelectedProject = () => {
     });
     // navigate(`/studentPage/${id}/myprojects/${idProject}`);
     getFiles();
+    const form = document.getElementById("formAddFile");
+    form.style.display = "none";
   };
 
   const showForm = () => {
