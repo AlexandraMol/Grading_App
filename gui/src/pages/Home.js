@@ -1,27 +1,35 @@
+import * as React from "react";
+import ReactDOM from "react-dom";
 import { useNavigate } from "react-router";
+import "../assets/Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <p>Aplicatie de acordat note</p>
+      <div className="container">
+        <div className="logo"></div>
+        <p>Aplicație de acordat note</p>
 
-      <button
-        onClick={() => {
-          navigate("/register");
-        }}
-      >
-        Register
-      </button>
+        <button
+          className="btnRegister"
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
+          Register
+        </button>
 
-      <button
-        onClick={() => {
-          navigate("/login");
-        }}
-      >
-        Login
-      </button>
+        <button
+          className="btnLogin"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </button>
+      </div>
     </>
   );
 };

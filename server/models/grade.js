@@ -9,6 +9,10 @@ const Grade = sequelize.define("Grade", {
   grade: {
     type: DataTypes.FLOAT,
   },
+
+  idUser: {
+    type: DataTypes.INTEGER,
+  },
 });
 
 module.exports = Grade;
