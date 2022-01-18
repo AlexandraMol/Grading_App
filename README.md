@@ -7,7 +7,7 @@
 - [Descriere](#descriere)
 - [Functionalitati](#functionalitati)
 - [Schema bazei de date](#schema-bazei-de-date)
-- [Cum se pornește aplicația]
+- [Cum se pornește aplicația](#pornire-aplicatie)
 
 ## Despre aplicatie
 
@@ -44,14 +44,17 @@ Platforma este bazată pe o aplicație web cu arhitectură de tip Single Page Ap
 ![Schema bazei de date](./server/media/BD_GraddingApp.png)
 
 ## Cum se pornește aplicația
+
 • Se instalează modulele mai întâi din gui și server (de preferat să se deschidă 2 terminale)
+
 •cd server
+
 •npm install
 
-•Pentru gui
+Pentru gui
+
 •cd gui
+
 •npm install
+
 • Aplicația se pornește cu npm install în ambele ( mai întâi se pornește server-ul)
-
-
-
