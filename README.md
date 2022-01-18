@@ -45,12 +45,12 @@ Platforma este bazată pe o aplicație web cu arhitectură de tip Single Page Ap
 
 ## Cum se pornește aplicația
 • Se instalează modulele mai întâi din gui și server (de preferat să se deschidă 2 terminale)
-cd server
-npm install
+•cd server
+•npm install
 
-Pentru gui
-cd gui
-npm install
+•Pentru gui
+•cd gui
+•npm install
 • Aplicația se pornește cu npm install în ambele ( mai întâi se pornește server-ul)
 
 
