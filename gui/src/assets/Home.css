@@ -46,7 +46,8 @@ body {
 }
 
 .btnRegister:hover,
-.btnLogin:hover {
+.btnLogin:hover,
+#btnBackHome:hover {
   background-color: #f2b880;
 }
 
@@ -61,4 +62,16 @@ body {
   font-size: 0.5em;
 }
 
-
+#btnBackHome {
+  width: 90px;
+  height: 30px;
+  background-color: #fff4ec;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-bottom: -2em;
+  margin-left: 2em;
+  position: absolute;
+  top: 0;
+  left: 0q;
+}

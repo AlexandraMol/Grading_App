@@ -135,9 +135,9 @@ otherProjectRouter
       const projectGrade = await Grade.findAll({
         where: {
           idProject: {
-            [Op.notIn]: listOtherProjectId,
             [Op.is]: req.params.idProject,
           },
+          idUser: req.params.idStudent,
         },
       });
 
@@ -177,24 +177,25 @@ otherProjectRouter
           [Op.notIn]: listOtherProjectId,
           [Op.is]: req.params.idProject,
         },
+        idUser: req.params.idStudent,
       },
     });
-
+    console.log(projectGrade);
     if (projectGrade) {
-      const updatedprojectGrade = await Grade.update(
+      const projectGrade = await Grade.update(
         {
           grade: req.body.grade,
         },
         {
           where: {
             idProject: {
-              [Op.notIn]: listOtherProjectId,
               [Op.is]: req.params.idProject,
             },
+            idUser: req.params.idStudent,
           },
         }
       );
-      return res.status(200).json(updatedprojectGrade);
+      return res.status(200).json(projectGrade);
     }
   });
 

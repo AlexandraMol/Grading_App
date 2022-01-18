@@ -21,25 +21,35 @@ const Register = () => {
   };
 
   return (
-    <div className="Register">
+    <div className="container">
+      <button
+        id="btnBackHome"
+        onClick={() => {
+          navigate(`/`);
+        }}
+      >
+        Go back
+      </button>
       <div className="registration">
         <h1>Registration</h1>
-        <label>Email</label>
+
         <input
           type="text"
+          placeholder="Email"
           onChange={(e) => {
             setEmailReg(e.target.value);
           }}
         ></input>
+        <br></br>
 
-        <label>Password</label>
         <input
           type="text"
+          placeholder="Email"
           onChange={(e) => {
             setPassowordReg(e.target.value);
           }}
         ></input>
-
+        <br></br>
         <label>Usertype</label>
         <input
           type="number"
@@ -47,7 +57,7 @@ const Register = () => {
             setUserTypeReg(e.target.value);
           }}
         ></input>
-
+        <br></br>
         <button onClick={register}>Register</button>
       </div>
     </div>

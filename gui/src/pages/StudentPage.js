@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +12,21 @@ const StudentPage = () => {
   const navigate = useNavigate();
   let { id } = useParams();
   const idFinal = id.split(":");
+  console.log(idFinal);
+  async function projectsTest() {
+    const res = Axios.get(
+      `http://localhost:8080/api/${idFinal[1]}/myprojects`,
+      {
+        params: { UserId: idFinal[1] },
+      }
+    );
+    const data = await res;
+    console.log(data.data);
+    if (data.data.length > 0) {
+      navigate(`/studentPage/${id}/otherprojects`);
+    }
+  }
+
   return (
     <>
       <p>Merge! {idFinal}</p>
@@ -28,13 +44,7 @@ const StudentPage = () => {
       >
         Adauga proiect
       </button>
-      <button
-        onClick={() => {
-          navigate(`/studentPage/${id}/otherprojects`);
-        }}
-      >
-        Vizualizeaza proiecte
-      </button>
+      <button onClick={projectsTest}>Vizualizeaza proiecte</button>
     </>
   );
 };
