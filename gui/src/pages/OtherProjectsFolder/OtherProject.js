@@ -86,13 +86,16 @@ function OtherProject(props) {
   });
 
   const checkTime = () => {
-    if (timerComponents.length) {
-      //sa generezi un numar aleator intre 0 si 1 si sa verifici. daca 0 inseamna ca nu esti in juriu si nu te duce la pagina
-      //1 ar trebui sa te duca la pagina aia (linia)
+    var generate = Math.random();
 
-      navigate(`/studentPage/${id}/otherprojects/${item.id}`);
+    if (generate < 0.5) {
+      toast.error("Nu poti nota acest proiect!");
     } else {
-      toast("Nu mai poti vota!");
+      if (timerComponents.length) {
+        navigate(`/studentPage/${id}/otherprojects/${item.id}`);
+      } else {
+        toast("Nu mai poti vota!");
+      }
     }
   };
 

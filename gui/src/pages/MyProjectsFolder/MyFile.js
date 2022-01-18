@@ -14,10 +14,10 @@ function MyFile(props) {
   const { item } = props;
   const navigate = useNavigate();
   return (
-    <div className="file">
-      <div>Fisierul numarul {item.id}</div>
+    <>
       <button
-        className="fileName"
+        className="btnStudentPage"
+        style={{ marginBottom: "2em", height: "40px" }}
         onClick={() => {
           navigate(
             `/studentPage/${idStudentFinal[1]}/myprojects/${idProject}/files/${item.id}`
@@ -26,9 +26,9 @@ function MyFile(props) {
       >
         {item.fileName}
       </button>
-      <div className="file">{item.file}</div>
+
       <br></br>
-    </div>
+    </>
   );
 }
 

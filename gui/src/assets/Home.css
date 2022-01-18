@@ -62,7 +62,7 @@ body {
 }
 
 .toast {
-  font-size: 0.5em;
+  font-size: 1em;
 }
 
 #btnBackHome {
@@ -104,7 +104,8 @@ body {
 }
 
 .btnStudentPage:hover,
-.btnTitle:hover {
+.btnTitle:hover,
+#btnAddNewFile:hover {
   transition: 0.5s ease-in-out;
   background: #f2b880;
 }
@@ -162,4 +163,49 @@ body {
   height: 40px;
   border-radius: 10px;
   font-weight: bold;
+}
+
+/*************************PROJECT FILES******************************/
+
+#container-fisiere {
+  padding-top: 3em;
+  margin-top: 3em;
+  width: 20em;
+  height: auto;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  border-radius: 30px;
+  margin-bottom: 3em;
+}
+
+.fileList {
+  background-color: #e4c1f9;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+#btnAddNewFile {
+  background-color: #fff4ec;
+  margin-top: 2em;
+  font-family: "Poppins", sans-serif;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.fileContent {
+  height: 30px;
+  margin-top: -2em;
+  width: 200px;
+
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+
+#fileContent {
+  width: 80%;
+  height: 40%;
 }
