@@ -6,12 +6,14 @@ function Student(props) {
   const navigate = useNavigate();
 
   return (
-    <div className="container-project">
+    <div className="container-student">
       <br></br>
-      <div className="projectContent"> Emailul studentului: {item.email}</div>
+      <div className="projectContent">
+        <b>Emailul studentului:</b> {item.email}
+      </div>
 
       <button
-        className="student"
+        className="btnTitle"
         onClick={() => {
           navigate(`/proffesorPage/students/${item.id}/projects`);
         }}
@@ -19,6 +21,7 @@ function Student(props) {
         Vezi proiectele studentului
       </button>
 
+      <br></br>
       <br></br>
     </div>
   );

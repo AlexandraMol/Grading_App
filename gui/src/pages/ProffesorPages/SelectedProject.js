@@ -8,23 +8,31 @@ function StudentProject(props) {
   const navigate = useNavigate();
 
   return (
-    <div className="project">
-      <div>Proiectul cu numarul {item.id}</div>
-      <button
-        className="title"
-        onClick={() => {
-          navigate(
-            `/proffesorPage/students/${idStudent}/projects/${item.id}/files`
-          );
-        }}
-      >
-        {item.title}
-      </button>
-      <div className="teamName">{item.teamName}</div>
-      <div className="videoLink">{item.videoLink}</div>
+    <>
+      <div className="container-project">
+        <button
+          className="btnTitle"
+          onClick={() => {
+            navigate(
+              `/proffesorPage/students/${idStudent}/projects/${item.id}/files`
+            );
+          }}
+        >
+          {item.title}
+        </button>
+        <p className="projectContent">
+          <b>Numele echipei:</b>
+          <br></br> {item.teamName}
+        </p>
+        <p className="projectContent">
+          <b>Video link:</b>
+          <br></br>
+          {item.videoLink}
+        </p>
 
-      <br></br>
-    </div>
+        <br></br>
+      </div>
+    </>
   );
 }
 

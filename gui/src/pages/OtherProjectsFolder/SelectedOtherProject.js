@@ -132,7 +132,7 @@ const SelectedOtherProject = () => {
             Send grade
           </button>
         </div>
-
+        <p>Fisierele proiectului:</p>
         <div className="file-list">
           {files.map((e) => (
             <OtherFile key={e.id} item={e} />

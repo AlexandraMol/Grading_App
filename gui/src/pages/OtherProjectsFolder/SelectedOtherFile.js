@@ -2,13 +2,13 @@ import React from "react";
 import Axios from "axios";
 
 import { useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import SelectedOtherFileContent from "./SelectedOtherFileContent";
 
 const SelectedOtherFile = () => {
   const [file, setFile] = useState([]);
-
+  const navigate = useNavigate();
   let { id, idProject, idFile } = useParams();
 
   async function getFile() {
@@ -23,11 +23,22 @@ const SelectedOtherFile = () => {
   }, []);
 
   return (
-    <div className="fileContent">
-      {file.map((e) => (
-        <SelectedOtherFileContent key={e.id} item={e} />
-      ))}
-    </div>
+    <>
+      <button
+        id="btnBackHome"
+        onClick={() => {
+          navigate(`/studentPage/:${id}/otherprojects/${idProject}`);
+        }}
+      >
+        Go back
+      </button>
+
+      <div className="containerFinal">
+        {file.map((e) => (
+          <SelectedOtherFileContent key={e.id} item={e} />
+        ))}
+      </div>
+    </>
   );
 };
 

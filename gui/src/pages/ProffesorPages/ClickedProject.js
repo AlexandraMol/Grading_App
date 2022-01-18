@@ -37,10 +37,10 @@ const ClickedProject = () => {
 
   return (
     <>
-      <div>Nota: {gradeValue}</div>
+      <div className="container-project">Nota: {gradeValue}</div>
 
       <br></br>
-      <div className="file-list">
+      <div className="container-project">
         {files.map((e) => (
           <ProjectFile key={e.id} item={e} />
         ))}

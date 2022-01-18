@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { useState, useEffect } from "react";
@@ -7,7 +7,7 @@ import SelectedProject from "./SelectedProject";
 
 const ProjectsSelectedStudent = () => {
   const [projects, setProjects] = useState([]);
-
+  const navigate = useNavigate();
   let { idStudent } = useParams();
 
   const getProjects = () => {
@@ -23,8 +23,14 @@ const ProjectsSelectedStudent = () => {
 
   return (
     <div className="project-list">
-      <div>Lista de proiecte:</div>
-
+      <button
+        id="btnBackHome"
+        onClick={() => {
+          navigate(`/proffesorPage/students`);
+        }}
+      >
+        Go back
+      </button>
       <div>
         {projects.map((e) => (
           <SelectedProject key={e.id} item={e} />

@@ -7,21 +7,31 @@ function ProjectFile(props) {
   const { item } = props;
   const navigate = useNavigate();
   return (
-    <div className="file">
-      <div>Fisierul numarul {item.id}</div>
+    <>
       <button
-        className="fileName"
+        id="btnBackHome"
         onClick={() => {
-          navigate(
-            `/proffesorPage/students/${idStudent}/projects/${projectId}/files/${item.id}`
-          );
+          navigate(`/proffesorPage/students/${idStudent}/projects`);
         }}
       >
-        {item.fileName}
+        Go back
       </button>
-      <div className="file">{item.file}</div>
-      <br></br>
-    </div>
+      <div className="file">
+        <button
+          className="btnStudentPage"
+          style={{ marginBottom: "2em", height: "40px" }}
+          onClick={() => {
+            navigate(
+              `/proffesorPage/students/${idStudent}/projects/${projectId}/files/${item.id}`
+            );
+          }}
+        >
+          {item.fileName}
+        </button>
+
+        <br></br>
+      </div>
+    </>
   );
 }
 

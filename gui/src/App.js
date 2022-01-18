@@ -63,7 +63,7 @@ function App() {
 
         {/* Proffesor Routes Ending */}
 
-        <Route path="/proffesorPage/students" element={<Students />} />
+        <Route path="/proffesorPage/:id/students" element={<Students />} />
         <Route
           path="/proffesorPage/students/:idStudent/projects"
           element={<ProjectsSelectedStudent />}
