@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import MyProject from "./MyProject";
-const SERVER = "http://localhost:8080/";
 
 const MyProjects = () => {
   const [projects, setProjects] = useState([]);

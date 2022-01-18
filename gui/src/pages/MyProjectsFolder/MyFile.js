@@ -1,11 +1,5 @@
 import { useNavigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function MyFile(props) {
   let { id, idProject } = useParams();

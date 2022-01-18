@@ -1,19 +1,18 @@
 import Axios from "axios";
 import { useNavigate } from "react-router";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [emailReg, setEmailReg] = useState("");
   const [passowordReg, setPassowordReg] = useState("");
-  const [userTypeReg, setUserTypeReg] = useState(0);
+
   const navigate = useNavigate();
   const register = () => {
     const e = document.getElementById("userType");
-    setUserTypeReg(e.value);
-    console.log(userTypeReg);
-    if (emailReg === "" && passowordReg == "") {
+
+    if (emailReg === "" && passowordReg === "") {
       toast.error("Nu ai introdus datele!");
     } else if (emailReg === "") {
       toast.error("Nu ai introdus adresa de email!");

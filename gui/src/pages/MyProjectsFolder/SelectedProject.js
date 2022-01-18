@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import MyFile from "./MyFile";
@@ -29,7 +23,7 @@ const SelectedProject = () => {
       setFiles(response.data);
     });
   };
-  console.log(files);
+
   useEffect(() => {
     getFiles();
   }, []);
@@ -51,7 +45,7 @@ const SelectedProject = () => {
       ).then((response) => {
         console.log(response);
       });
-      // navigate(`/studentPage/${id}/myprojects/${idProject}`);
+
       getFiles();
       const form = document.getElementById("formAddFile");
       const btnAdd = document.getElementById("btnAddNewFile");

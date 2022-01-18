@@ -28,7 +28,7 @@ function Login() {
           data[i].password === passwordLogin
         ) {
           userId = await data[i].id;
-          console.log(data[i].userType);
+
           if (data[i].userType === 1) {
             navigate(`/studentPage/:${userId}`);
             ok = 1;

@@ -1,35 +1,27 @@
 import { useNavigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
 
-function Student(props){
-    const { item } = props;
- 
-    const navigate = useNavigate();
+function Student(props) {
+  const { item } = props;
 
-    return(
-        <div className="student">
-           <br></br>
-          <div>  Emailul studentului: {item.email}</div> 
+  const navigate = useNavigate();
 
-          <button
+  return (
+    <div className="container-project">
+      <br></br>
+      <div className="projectContent"> Emailul studentului: {item.email}</div>
+
+      <button
         className="student"
         onClick={() => {
           navigate(`/proffesorPage/students/${item.id}/projects`);
         }}
       >
-          Vezi proiectele studentului
-      </button> 
+        Vezi proiectele studentului
+      </button>
 
-        <br></br>
-        </div>
-        
-    )
+      <br></br>
+    </div>
+  );
 }
 
 export default Student;

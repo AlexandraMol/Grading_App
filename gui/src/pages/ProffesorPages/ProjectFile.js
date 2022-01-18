@@ -1,22 +1,14 @@
 import { useNavigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function ProjectFile(props) {
+  let { idStudent, projectId } = useParams();
 
-    let {idStudent,projectId}=useParams();
-
-    const {item}=props;
-    const navigate = useNavigate();
-    return(
-        <div className="file">
-
-           <div>Fisierul numarul {item.id}</div>
+  const { item } = props;
+  const navigate = useNavigate();
+  return (
+    <div className="file">
+      <div>Fisierul numarul {item.id}</div>
       <button
         className="fileName"
         onClick={() => {
@@ -29,9 +21,8 @@ function ProjectFile(props) {
       </button>
       <div className="file">{item.file}</div>
       <br></br>
-            
-        </div>
-    )
+    </div>
+  );
 }
 
 export default ProjectFile;

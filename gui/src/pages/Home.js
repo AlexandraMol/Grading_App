@@ -1,5 +1,4 @@
 import * as React from "react";
-import ReactDOM from "react-dom";
 import { useNavigate } from "react-router";
 import "../assets/Home.css";
 

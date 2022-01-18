@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import OtherProject from "./OtherProject";
-const SERVER = "http://localhost:8080/";
 
 const OtherProjects = () => {
-  const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
 
   let { id } = useParams();
@@ -37,7 +29,6 @@ const OtherProjects = () => {
           <OtherProject key={project.id} item={project} />
         ))}
       </div>
-      {/* <div>Merge</div> */}
     </>
   );
 };

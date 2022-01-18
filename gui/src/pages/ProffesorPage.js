@@ -1,31 +1,33 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+
 import { useNavigate } from "react-router";
 
-const ProffesorPage= () => {
-    const navigate = useNavigate();
-    let { id } = useParams();
-    const idFinal = id.split(":");
+const ProffesorPage = () => {
+  const navigate = useNavigate();
 
-    return (
-        <>
-        <div>Merge {idFinal}</div>
-
-        <button
+  return (
+    <>
+      <button
+        id="btnBackHome"
         onClick={() => {
-          navigate(`/proffesorPage/students`);
+          navigate(`/`);
         }}
       >
-        Vizualizeaza studenti
+        Logout
       </button>
-        </>
-    )
-}
+      <div className="container">
+        <button
+          className="btnStudentPage"
+          style={{ marginTop: "11em" }}
+          onClick={() => {
+            navigate(`/proffesorPage/students`);
+          }}
+        >
+          Vizualizeaza studenti
+        </button>
+      </div>
+    </>
+  );
+};
 
 export default ProffesorPage;

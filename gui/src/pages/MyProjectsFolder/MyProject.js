@@ -1,16 +1,9 @@
 import { useNavigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 function MyProject(props) {
   const { item } = props;
   let { id } = useParams();
-  const idFinal = id.split(":");
-  console.log(id);
+
   const navigate = useNavigate();
   return (
     <>

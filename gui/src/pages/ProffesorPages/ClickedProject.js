@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ProjectFile from "./ProjectFile";
 
 const ClickedProject = () => {
@@ -15,10 +9,6 @@ const ClickedProject = () => {
   const [grade, setGrade] = useState(0);
 
   let { idStudent, projectId } = useParams();
-
-  console.log(projectId);
-  console.log(idStudent);
-  console.log("aici");
 
   const getGrades = () => {
     Axios.get(
@@ -28,7 +18,7 @@ const ClickedProject = () => {
       setGrade(response.data);
     });
   };
-  console.log(grade);
+
   const getFiles = () => {
     Axios.get(
       `http://localhost:8080/api/students/${idStudent}/projects/${projectId}/files`,
@@ -43,7 +33,6 @@ const ClickedProject = () => {
     getGrades();
   }, []);
 
-  console.log(Object.values(grade));
   const gradeValue = Object.values(grade);
 
   return (
