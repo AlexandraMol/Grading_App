@@ -54,8 +54,8 @@ function OtherProject(props) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        min: Math.floor((difference / 1000 / 60) % 60),
+        sec: Math.floor((difference / 1000) % 60),
       };
     }
 
@@ -87,6 +87,9 @@ function OtherProject(props) {
 
   const checkTime = () => {
     if (timerComponents.length) {
+      //sa generezi un numar aleator intre 0 si 1 si sa verifici. daca 0 inseamna ca nu esti in juriu si nu te duce la pagina
+      //1 ar trebui sa te duca la pagina aia (linia)
+
       navigate(`/studentPage/${id}/otherprojects/${item.id}`);
     } else {
       toast("Nu mai poti vota!");
@@ -94,22 +97,41 @@ function OtherProject(props) {
   };
 
   return (
-    <div className="project" id="project">
-      <div>Proiectul cu numarul {item.id}</div>
-      <button className="title" onClick={checkTime}>
-        {item.title}
+    <>
+      <button
+        id="btnBackHome"
+        onClick={() => {
+          navigate(`/studentPage/${id}`);
+        }}
+      >
+        Go back
       </button>
-      <ToastContainer />
-      <div className="teamName">{item.teamName}</div>
-      <div className="videoLink">{item.videoLink}</div>
+      <div className="container-project" id="project">
+        <button className="btnTitle" onClick={checkTime}>
+          {item.title}
+        </button>
+        <ToastContainer />
+        <div className="projectContent">
+          <b>Echipa: </b>
+          <br></br>
+          {item.teamName}
+        </div>
+        <div className="projectContent">
+          <b>Video link: </b>
+          <br></br>
+          {item.videoLink}
+        </div>
 
-      <div className="grade">Deadline acordare nota:</div>
-      <p>
-        {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-      </p>
+        <div className="projectContent">
+          <b>Deadline acordare nota:</b>
+        </div>
+        <p className="projectContent">
+          {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+        </p>
 
-      <br></br>
-    </div>
+        <br></br>
+      </div>
+    </>
   );
 }
 

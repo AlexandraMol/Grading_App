@@ -47,11 +47,14 @@ body {
 
 .btnRegister:hover,
 .btnLogin:hover,
+.btnRegister2:hover,
 #btnBackHome:hover {
   background-color: #f2b880;
+  transition: 0.5s ease-in-out;
 }
 
-.input {
+.input,
+#userType {
   width: 200px;
   height: 40px;
   border-radius: 3px;
@@ -74,4 +77,89 @@ body {
   position: absolute;
   top: 0;
   left: 0q;
+}
+
+.btnRegister2 {
+  background-color: #fff4ec;
+  margin-top: 2em;
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/*****************************STUDENT PAGE CSS***********************************/
+
+.btnStudentPage {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: #e4c1f9;
+  border: 1px solid black;
+  outline: none;
+  transition: 1s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  margin-top: 3em;
+}
+
+.btnStudentPage:hover,
+.btnTitle:hover {
+  transition: 0.5s ease-in-out;
+  background: #f2b880;
+}
+
+.containerStudentPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*****************************MY PROJECTS CSS**********************************/
+
+.container-project {
+  margin-top: 2em;
+  width: 10em;
+  height: auto;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.btnTitle {
+  width: 90%;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: none;
+  outline: none;
+  transition: 1s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.projectContent {
+  font-size: 18px;
+}
+
+/************************ADD PROJECT CSS*****************************/
+
+.container-addProject {
+  margin-top: -2em;
+  font-size: 16px;
+}
+
+.btnAdd {
+  background-color: #fff4ec;
+  margin-top: 2em;
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
 }

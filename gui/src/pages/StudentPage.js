@@ -29,22 +29,47 @@ const StudentPage = () => {
 
   return (
     <>
-      <p>Merge! {idFinal}</p>
       <button
+        id="btnBackHome"
         onClick={() => {
-          navigate(`/studentPage/${id}/myprojects`);
+          navigate(`/`);
         }}
       >
-        Proiectele mele
+        Go back
       </button>
-      <button
-        onClick={() => {
-          navigate(`/studentPage/${id}/addproject`);
-        }}
-      >
-        Adauga proiect
-      </button>
-      <button onClick={projectsTest}>Vizualizeaza proiecte</button>
+      <div className="container">
+        <button
+          id="btnBackHome"
+          onClick={() => {
+            navigate(`/`);
+          }}
+        >
+          Logout
+        </button>
+        <div className="containerStudentPage">
+          <button
+            className="btnStudentPage"
+            onClick={() => {
+              navigate(`/studentPage/${id}/myprojects`);
+            }}
+          >
+            Proiectele mele
+          </button>
+
+          <button
+            className="btnStudentPage"
+            onClick={() => {
+              navigate(`/studentPage/${id}/addproject`);
+            }}
+          >
+            Adauga proiect
+          </button>
+
+          <button onClick={projectsTest} className="btnStudentPage">
+            Vizualizeaza proiecte
+          </button>
+        </div>
+      </div>
     </>
   );
 };

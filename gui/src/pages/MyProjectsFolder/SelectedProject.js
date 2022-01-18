@@ -45,12 +45,20 @@ const SelectedProject = () => {
     // navigate(`/studentPage/${id}/myprojects/${idProject}`);
     getFiles();
     const form = document.getElementById("formAddFile");
+    const btnAdd = document.getElementById("btnAddNewFile");
+    const fileList = document.getElementById("fileList");
     form.style.display = "none";
+    btnAdd.style.display = "block";
+    fileList.style.display = "block";
   };
 
   const showForm = () => {
     const form = document.getElementById("formAddFile");
+    const btnAdd = document.getElementById("btnAddNewFile");
+    const fileList = document.getElementById("fileList");
+    btnAdd.style.display = "none";
     form.style.display = "block";
+    fileList.style.display = "none";
   };
 
   return (
@@ -74,9 +82,11 @@ const SelectedProject = () => {
           Add file
         </button>
       </div>
-      <button onClick={showForm}>Adauga un nou fisier</button>
+      <button onClick={showForm} id="btnAddNewFile">
+        Adauga un nou fisier
+      </button>
 
-      <div className="file-list">
+      <div className="file-list" id="fileList">
         {files.map((e) => (
           <MyFile key={e.id} item={e} />
         ))}

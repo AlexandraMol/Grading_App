@@ -13,21 +13,37 @@ function MyProject(props) {
   console.log(id);
   const navigate = useNavigate();
   return (
-    <div className="project">
-      <div>Proiectul cu numarul {item.id}</div>
+    <>
       <button
-        className="title"
+        id="btnBackHome"
         onClick={() => {
-          navigate(`/studentPage/${id}/myprojects/${item.id}`);
+          navigate(`/studentPage/${id}`);
         }}
       >
-        {item.title}
+        Go back
       </button>
-      <div className="teamName">{item.teamName}</div>
-      <div className="videoLink">{item.videoLink}</div>
+      <div className="container-project">
+        <button
+          className="btnTitle"
+          onClick={() => {
+            navigate(`/studentPage/${id}/myprojects/${item.id}`);
+          }}
+        >
+          {item.title}
+        </button>
+        <p className="projectContent">
+          <b>Numele echipei:</b>
+          <br></br> {item.teamName}
+        </p>
+        <p className="projectContent">
+          <b>Video link:</b>
+          <br></br>
+          {item.videoLink}
+        </p>
 
-      <br></br>
-    </div>
+        <br></br>
+      </div>
+    </>
   );
 }
 
